@@ -24,18 +24,26 @@
 \newcolumntype{I}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{J}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-\usepackage{float}
+\usepackage{flafter} % Ensure floats appear after they are defined
 %\usepackage[bottom]{footmisc} % Force footnotes to bottom
 \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
 \usepackage[utf8]{inputenc}\usepackage[utf8]{inputenc}
 
-\usepackage{afterpage}
+% Change default figure constraints\makeatletter
+\makeatletter
+\renewcommand{\fps@figure}{hbt}
+\renewcommand{\fps@table}{hbt}
+\makeatother
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}
 \usepackage{pdflscape}
 
-% Put first float on page at top...
-\makeatletter
-\setlength{\@fptop}{0pt}
-\makeatother
+\usepackage[small,compact]{titlesec}
 
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}

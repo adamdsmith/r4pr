@@ -1,7 +1,7 @@
 --- 
-report-subject: "Some important project"
+report-subject: "<YOUR PROJECT NAME HERE>"
 author: "`r Sys.Date()`" # Put date of report in "author" position for better spacing
-bibliography: sample.bib
+bibliography: sample.bib # Modify/replace this
 lot: yes
 lof: yes
 fontsize: 11pt
@@ -10,11 +10,10 @@ links-as-notes: yes
 colorlinks: blue
 output:
   r4pr::project_report:
-    keep_tex: yes
+    keep_tex: no
     dev: "cairo_pdf"
     citation_package: biblatex
-    template: latex/PR_template.tex
-    toc: yes
+    toc_bib: yes
 ---
 
 
@@ -98,7 +97,9 @@ Your Project Summary goes here! Test if url links are really added as footnotes:
 
 # Appendix A
 
-Sure, you can include appendices too. Here's one...
+If you need them, you can include appendices too. If not, delete these sections...
+
+But here's one appendix as an example... 
 
 # Appendix B
 

@@ -6,14 +6,12 @@ lot: yes
 lof: yes
 fontsize: 11pt
 cover-image: images/sample-cover-photo.jpg
-links-as-notes: yes
 colorlinks: blue
 output:
   r4pr::project_report:
     keep_tex: no
     dev: "cairo_pdf"
-    citation_package: biblatex
-    toc_bib: yes
+    citation_package: natbib
 ---
 
 

@@ -13,7 +13,7 @@ project_report(..., keep_tex = FALSE)
 LaTeX files are to be kept, defaults to \code{FALSE}}
 }
 \value{
-output format to pass to \code{\link[rmarkdown:render_book]{render_book}}
+output format to pass to \code{\link[bookdown:render_book]{render_book}}
 }
 \description{
 Format for creating a R4 Inventory and Monitoring Project Report

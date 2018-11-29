@@ -1,5 +1,5 @@
 --- 
-report-subject: "<YOUR PROJECT NAME HERE>"
+report-subject: "YOUR PROJECT NAME HERE"
 author: "`r Sys.Date()`" # Put date of report in "author" position for better spacing
 bibliography: sample.bib # Modify/replace this
 lot: yes

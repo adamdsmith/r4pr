@@ -5,7 +5,7 @@
 #' @param ... Arguments to \code{bookdown::pdf_book}
 #' @param keep_tex A boolean toggle to select whether intermediate
 #' LaTeX files are to be kept, defaults to \code{FALSE}
-#' @return output format to pass to \code{\link[rmarkdown:render_book]{render_book}}
+#' @return output format to pass to \code{\link[bookdown:render_book]{render_book}}
 #' @export
 project_report <- function(..., keep_tex = FALSE) {
   pdf_book_format(...,

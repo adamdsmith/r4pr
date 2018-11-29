@@ -1,0 +1,4 @@
+name: USFWS R4 Project Report
+description: >
+ Template for creating a Project Report for USFWS R4 I&M
+create_dir: true

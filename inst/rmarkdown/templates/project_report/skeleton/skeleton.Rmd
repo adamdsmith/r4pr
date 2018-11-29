@@ -1,0 +1,107 @@
+--- 
+report-subject: "Some important project"
+author: "`r Sys.Date()`" # Put date of report in "author" position for better spacing
+bibliography: sample.bib
+lot: yes
+lof: yes
+fontsize: 11pt
+cover-image: images/sample-cover-photo.jpg
+links-as-notes: yes
+colorlinks: blue
+output:
+  r4pr::project_report:
+    keep_tex: yes
+    dev: "cairo_pdf"
+    citation_package: biblatex
+    template: latex/PR_template.tex
+    toc: yes
+---
+
+
+```{r options, include = FALSE}
+options(tinytex.verbose = TRUE, rmarkdown.df_print = FALSE)
+knitr::opts_chunk$set(message=FALSE, warning=FALSE, echo=FALSE, dpi = 300)
+```
+
+# FIGURES AND TABLES
+
+You can generate figures two ways:
+
+Inside R using a code chunk...
+ 
+```{r ex-fig1, out.width="75%", fig.cap="I created this figure in R.", echo=TRUE}
+hist(rnbinom(10000, mu = 10, size = 2))
+```
+
+...or by referencing an image/photo files stored in the `images` directory. This again requires a named R chunk to help you with referencing the figure later...
+
+```{r ex-fig2, out.width = "50%", fig.cap="Look at these logos! Amazing!", echo=TRUE}
+knitr::include_graphics("images/usfws-refuges-logos.png")
+```
+
+Tables are always tricky, but it's generally best to use the `kable` function from the `knitr` package. We also recommend looking into the `kableExtra` package as well if you want more customization options. In any case, these will be created within R, again in a named R chunk for easy cross-referencing (see next section).
+
+```{r ex-table, echo = TRUE}
+im_team <- data.frame(Name = c("Janet Ertel", "David Richardson", "Adam Smith",
+                               "Amanda Bessler", "Michelle Moorman", 
+                               "Zach Cravens"),
+                      Role = c("Supreme Leader", "Crotchety Curmudgeon", 
+                               "Data Therapist", "Eternal Optimist",
+                               "USGS Convert", "Greenhorn"))
+knitr::kable(im_team, booktabs = TRUE,
+  caption = "I and M Team members and roles as of January 2019.")
+```
+
+# CROSS-REFERENCES
+
+You can easily reference and link to figures and tables throughout the document. For example, to link to Figure 1, we simply use `\@ref(label)` where `label` is the R code chunk ID preceded by `fig:` for figures or `tab:` for tables. So for the logo picture above, the R code chunk was "ex-fig" meaning we can reference it via `\@ref(fig:ex-fig1)`. When displayed as text, it only uses the appropriate figure number (e.g., 1, 2, etc.), so you have to use "Fig." or "Figure" on your own... Here goes: see Figure \@ref(fig:ex-fig1) or Figure \@ref(fig:ex-fig2), whichever pleases you most. Table \@ref(tab:ex-table) is pretty exciting too, if you'll recall.
+
+# CITATIONS
+
+To cite an entry from your BibTex database, use `@key` or `[@key]` (the latter puts the citation in parentheses. For example `@RCoreTeam2018` is rendered as R Core Team (2018), and `[@Flint2013]` generates "(Flint 2013)". For completeness, @Flint2013 does not use R [@RCoreTeam2018] for his manuscript.
+
+# PROJECT SUMMARY
+
+Your Project Summary goes here! Test if url links are really added as footnotes: [USWFS](http://fws.gov)
+
+# CURRENT STATUS
+
+## Action Items
+
+## Timeline
+
+## Short-term Planning
+
+## Long-term Planning
+
+# PEOPLE
+
+## Communications
+
+# PROBLEM DESCRIPTION
+
+# GOALS & OBJECTIVES
+
+# PLANNING, SAMPLE DESIGN, DECISIONS
+
+# MONITORING, PROTOCOLS
+
+# DATA MANAGEMENT & ANALYSIS
+
+# KEY UNCERTAINTIES
+
+# REPORT & COMMUNICATIONS
+
+# ACTIVITY LOG
+
+# (APPENDIX) Appendix {-}
+
+# Appendix A
+
+Sure, you can include appendices too. Here's one...
+
+# Appendix B
+
+And here's another... Just make sure to leave the `REFERENCES` section at the end...
+
+# REFERENCES

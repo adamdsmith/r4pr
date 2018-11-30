@@ -3,6 +3,9 @@ report-subject: "YOUR PROJECT NAME HERE"
 author: "`r Sys.Date()`" # Put date of report in "author" position for better spacing
 bibliography: sample.bib # Rename/delete/modify/replace this as necessary
 link-citations: yes      # Should inline references link to bibliography
+urlcolor: blue
+citecolor: Maroon
+linkcolor: ForestGreen
 lof: yes                 # Print list of figures
 lot: yes                 # Print list of tables?
 fontsize: 11pt           # Valid options are 10pt, 11pt, or 12pt
@@ -17,6 +20,11 @@ output:
 ```{r options, include = FALSE}
 options(tinytex.verbose = TRUE, rmarkdown.df_print = FALSE)
 knitr::opts_chunk$set(message=FALSE, warning=FALSE, echo=FALSE, dpi = 300)
+
+# Load your packages here
+# The `pacman` package makes this easy. 
+# Install it if necessary with `install.packages("pacman")`
+pacman::p_load(knitr, kableExtra) # Add any others you need to this list...
 ```
 
 # FIGURES AND TABLES
@@ -35,7 +43,7 @@ hist(rnbinom(10000, mu = 10, size = 2))
 knitr::include_graphics("images/usfws-refuges-logos.png")
 ```
 
-Tables are always tricky, but it's generally best to use the `kable` function from the `knitr` package. We also recommend looking into the `kableExtra` package as well if you want more customization options. In any case, these will be created within R, again in a named R chunk for easy cross-referencing (see next section).
+Tables are always tricky, but it's generally best to use the `kable` function from the `knitr` package. We also recommend looking into the `kableExtra` package as well if you want more customization options; here's a [very helpful document](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf). In any case, these will be created within R, again in a named R chunk for easy cross-referencing (see next section).
 
 ```{r ex-table, echo = TRUE}
 im_team <- data.frame(Name = c("Janet Ertel", "David Richardson", "Adam Smith",
@@ -44,8 +52,9 @@ im_team <- data.frame(Name = c("Janet Ertel", "David Richardson", "Adam Smith",
                       Role = c("Supreme Leader", "Crotchety Curmudgeon", 
                                "Data Therapist", "Eternal Optimist",
                                "USGS Convert", "Greenhorn"))
-knitr::kable(im_team, booktabs = TRUE,
+tab <- knitr::kable(im_team, booktabs = TRUE,
   caption = "I and M Team members and roles as of January 2019.")
+kable_styling(tab, full_width = TRUE, latex_options = "striped")
 ```
 
 # CROSS-REFERENCES
@@ -113,6 +122,4 @@ But here's one appendix as an example...
 
 # Appendix B
 
-And here's another... Just make sure to leave the `REFERENCES` section at the end...
-
-# REFERENCES
+And here's another... just for good measure.

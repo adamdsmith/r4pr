@@ -1,5 +1,5 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
-
+\usepackage{setspace}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -30,7 +30,12 @@
 \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
 \usepackage[utf8]{inputenc}\usepackage[utf8]{inputenc}
 
-% Change default figure constraints\makeatletter
+% Change default figure constraints
+\makeatletter
+\setlength\@fptop{0pt}
+\setlength\@fpsep{8pt plus 1fil}
+\setlength\@fpbot{0pt}
+\makeatother
 \makeatletter
 \renewcommand{\fps@figure}{hbt}
 \renewcommand{\fps@table}{hbt}
@@ -230,8 +235,9 @@ $if(colorlinks)$
 \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
 $endif$
 \setcounter{tocdepth}{$toc-depth$}
+\begin{spacing}{0.9}
 \tableofcontents
-\newpage
+\end{spacing}\newpage
 }
 $endif$
 

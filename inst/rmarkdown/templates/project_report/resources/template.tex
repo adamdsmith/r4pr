@@ -4,6 +4,7 @@
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{titling}
+\usepackage[dvipsnames]{xcolor}
 
 % Left justification without hyphenation
 \usepackage[document]{ragged2e}
@@ -89,6 +90,7 @@ $endif$
 $if(natbib)$
 \usepackage$if(natbiboptions)$[$for(natbiboptions)$$natbiboptions$$sep$,$endfor$]$endif${natbib}
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+\setcitestyle{notesep={; },round,aysep={},yysep={;}}
 $endif$
 $if(biblatex)$
 \usepackage$if(biblio-style)$[style=$biblio-style$]$endif${biblatex}

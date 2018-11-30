@@ -1,17 +1,16 @@
 --- 
 report-subject: "YOUR PROJECT NAME HERE"
 author: "`r Sys.Date()`" # Put date of report in "author" position for better spacing
-bibliography: sample.bib # Modify/replace this
-lot: yes
-lof: yes
-fontsize: 11pt
+bibliography: sample.bib # Rename/delete/modify/replace this as necessary
+link-citations: yes      # Should inline references link to bibliography
+lof: yes                 # Print list of figures
+lot: yes                 # Print list of tables?
+fontsize: 11pt           # Valid options are 10pt, 11pt, or 12pt
 cover-image: images/sample-cover-photo.jpg
-colorlinks: blue
 output:
   r4pr::project_report:
-    keep_tex: no
+    keep_tex: no         
     dev: "cairo_pdf"
-    citation_package: natbib
 ---
 
 

@@ -4,7 +4,7 @@
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{titling}
-\usepackage[dvipsnames]{xcolor}
+\usepackage[dvipsnames,table]{xcolor}
 
 % Left justification without hyphenation
 \usepackage[document]{ragged2e}
@@ -16,8 +16,6 @@
 \captionsetup[figure]{justification=raggedright,singlelinecheck=false,labelfont=bf=bf}
 \usepackage{amssymb} % checkmark symbol
 \usepackage{array}
-\usepackage{booktabs}
-\usepackage{longtable}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
@@ -206,6 +204,17 @@ $if(author)$
 $endif$
 
 \predate{}\date{}\postdate{}
+
+% Remaining packages required to use kableExtra
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
 
 $for(header-includes)$
 $header-includes$

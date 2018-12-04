@@ -36,12 +36,9 @@ To use `r4pr` and generate the pdf Project Reports from the template, you'll nee
     
 1. **pandoc**: If you're using a relatively recent version of [RStudio](https://www.rstudio.com/products/rstudio/download/preview/), pandoc is included.  Using `r4pr` outside of RStudio will require a recent version of [pandoc](http://pandoc.org/installing.html).
 
-R, Rtools, RStudio, Microsoft Access, and PDFtk Server will require administrative priveleges but the installation of packages after this initial install will not.  It's likely Microsoft Access is already installed on your DOI computer.  `MABMreportr` is tested only on PCs running Microsoft Windows.
+R & RStudio can be installed without administrative privileges via FWS Apps-to-go (search for "R Statistical Package"). Rtools will require administrative priveleges but the installation of packages after this initial install will not.
 
-You also need an up-to-date, local copy of the MABM database.  Currently, this applies to two people in the world, but it will be easy to provide a remotely accessible location for this database down the road.
-
-With the installation formalities out of the way, install and load the MABMreportr package to access its functionality.
-
+With the installation formalities out of the way, install the template...
 
 ## Installing the Template
 

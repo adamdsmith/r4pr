@@ -23,7 +23,12 @@
 \newcolumntype{I}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{J}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
+% Some bulleted list customization
+\usepackage{enumitem}
+\setlist[enumerate]{before={\interlinepenalty=10000}}
+
 \usepackage{flafter} % Ensure floats appear after they are defined
+\usepackage{placeins} % To set float barrier ahead of references
 %\usepackage[bottom]{footmisc} % Force footnotes to bottom
 \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
 \usepackage[utf8]{inputenc}\usepackage[utf8]{inputenc}
@@ -41,13 +46,13 @@
 \setcounter{topnumber}{2}
 \setcounter{bottomnumber}{2}
 \setcounter{totalnumber}{4}
-\renewcommand\floatpagefraction{.9}
-\renewcommand\topfraction{.9}
-\renewcommand\bottomfraction{.9}
-\renewcommand\textfraction{.1}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}
 \usepackage{pdflscape}
 
-\usepackage[small,compact]{titlesec}
+\usepackage[medium,compact]{titlesec}
 
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}

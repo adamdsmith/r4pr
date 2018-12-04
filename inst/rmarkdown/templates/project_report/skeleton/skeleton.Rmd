@@ -79,10 +79,6 @@ Your Project Summary goes here! Test if url links are really added as footnotes:
 
 ## Long-term Planning
 
-# PEOPLE
-
-## Communications
-
 # PROBLEM DESCRIPTION
 
 # GOALS & OBJECTIVES
@@ -97,18 +93,22 @@ Your Project Summary goes here! Test if url links are really added as footnotes:
 
 # REPORT & COMMUNICATIONS
 
+# PEOPLE
+
+## Communications
+
 # ACTIVITY LOG
 
 ```{r fixed-ref-placement-note, include=FALSE}
 # DO NOT EDIT THE FOLLOWING REFERENCES SECTION!
 # Except perhaps to change the section name as you like
-# And do not delete either the preceding '\clearpage' or the following 
+# And do not delete either the preceding '\FloatBarrier' or the following 
 # '<div id="refs"></div>' lines as they preserve the location of the literature
 # cited in the presence of appendices
 
 # You can, however, delete this code chunk 
 ```
-\clearpage
+\FloatBarrier
 # REFERENCES
 <div id="refs"></div>
 
